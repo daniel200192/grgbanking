@@ -1,0 +1,57 @@
+修正 C 硬碟轉換到 D 硬碟應加入的參數如下：
+
+CD /D "D:\abom\abom\" ( CD /D "D:\" 參數 /D 可轉換到其他硬碟路徑的參數 )
+
+
+
+
+@echo off
+
+chdir  換行
+pause  暫停
+CD /D "D:\abom\abom\"
+chdir
+pause
+
+"C:\abom\jruby\bin\jruby" -S rake db:migrate RAILS_ENV=production
+"C:\abom\jruby\bin\jruby" -S rake db:seed RAILS_ENV=production
+
+
+
+cd /d "d:\abom\abom"
+
+
+
+
+C:\abom\abom>chdir /?
+顯示目前工作目錄的名稱或是變更目錄。
+
+CHDIR [/D] [drive:][path]
+CHDIR [..]
+CD [/D] [drive:][path]
+CD [..]
+
+  ..   指定變更到上層目錄。
+
+輸入 CD drive: 即可顯示指定磁碟機的目前工作目錄。
+僅輸入 CD 而不加參數，即可顯示目前的磁碟機和目錄。
+
+使用 /D 參數可以同時變更工作磁碟機及其工作目錄。
+
+如果您啟用擴充命令，CHDIR 的變更如下:
+
+目前的目錄字串會被轉換成與磁碟上名稱相同大小寫的字串。
+所以如果磁碟上的目錄是 C:\Temp 的話，CD C:\TEMP 命令實
+際上會轉換為 CD C:\Temp。
+
+CHDIR 命令不會將空格當成分隔字元，所以如果您要切換到含
+有空白字元的目錄時，就算您不使用引號來括住目錄名稱，也
+一樣可以用 CD 命令切換到該目錄。例如:
+
+    cd \winnt\profiles\username\programs\start menu
+
+就相等於:
+
+    cd "\winnt\profiles\username\programs\start menu"
+
+如果您停用擴充命令，就必須輸入前一種命令。
